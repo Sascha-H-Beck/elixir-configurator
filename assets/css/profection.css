@@ -1,0 +1,135 @@
+@font-face {
+  font-family: "Ubuntu Sans Variable";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 100 800;
+  src: url("/fonts/ubuntu-sans-latin-wght-normal.woff2") format("woff2-variations");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC,
+    U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215,
+    U+FEFF, U+FFFD;
+}
+
+html {
+  font-family: "Ubuntu Sans Variable", ui-sans-serif, system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+h2,
+h3 {
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+}
+
+a {
+  text-decoration: none;
+}
+
+[data-theme="light"] .fieldset .input,
+[data-theme="light"] .fieldset .textarea,
+[data-theme="light"] .fieldset .select {
+  background-color: transparent;
+  border: 1px solid oklch(30% 0.007 165);
+}
+
+[data-theme="light"] .fieldset .input:focus,
+[data-theme="light"] .fieldset .textarea:focus,
+[data-theme="light"] .fieldset .select:focus {
+  outline: 2px dashed oklch(50.1% 0.041 164);
+  outline-offset: 3px;
+  background-color: oklch(97.9% 0.008 169);
+  border-color: oklch(50.1% 0.041 164);
+}
+
+.fieldset .label {
+  font-weight: 500;
+}
+
+[data-theme="light"] .input:focus,
+[data-theme="light"] .textarea:focus,
+[data-theme="light"] .select:focus {
+  outline: 2px dashed oklch(50.1% 0.041 164);
+  outline-offset: 3px;
+  border-color: oklch(50.1% 0.041 164);
+}
+
+[data-theme="dark"] .input:focus,
+[data-theme="dark"] .textarea:focus,
+[data-theme="dark"] .select:focus {
+  outline: 2px dashed oklch(72.6% 0.04 164);
+  outline-offset: 3px;
+  border-color: oklch(72.6% 0.04 164);
+}
+
+.btn-accent {
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+[data-theme="light"] .btn-accent:hover {
+  background-color: oklch(55.1% 0.112 65);
+  border-color: oklch(29.9% 0.067 65);
+  color: white;
+}
+
+[data-theme="dark"] .btn-accent:hover {
+  background-color: oklch(65% 0.11 65);
+  border-color: oklch(29.9% 0.067 65);
+  color: white;
+}
+
+[data-theme="light"] .btn:focus-visible {
+  outline: 2px dashed oklch(50.1% 0.041 164);
+  outline-offset: 3px;
+  box-shadow: 0 0 0 6px oklch(90.1% 0.013 165);
+}
+
+[data-theme="dark"] .btn:focus-visible {
+  outline: 2px dashed oklch(72.6% 0.04 164);
+  outline-offset: 3px;
+  box-shadow: 0 0 0 6px oklch(22% 0.007 165);
+}
+
+.card-interactive {
+  transition: box-shadow 0.2s ease-in-out;
+}
+
+[data-theme="light"] .card-interactive:hover {
+  box-shadow: 0 0 0 4px oklch(72.6% 0.04 164);
+}
+
+[data-theme="dark"] .card-interactive:hover {
+  box-shadow: 0 0 0 4px oklch(50.1% 0.041 164);
+}
+
+.package-row:focus-within {
+  outline: 2px dashed oklch(50.1% 0.041 164);
+  outline-offset: 3px;
+}
+
+[data-theme="dark"] .package-row:focus-within {
+  outline-color: oklch(72.6% 0.04 164);
+}
+
+.nav-link {
+  border-bottom: 4px solid transparent;
+  transition: border-color 0.25s ease, color 0.15s ease;
+}
+
+[data-theme="light"] .nav-link:hover {
+  border-color: oklch(72.6% 0.04 164);
+}
+
+[data-theme="light"] .nav-link.nav-active {
+  border-color: oklch(50.1% 0.041 164);
+  color: oklch(50.1% 0.041 164);
+}
+
+[data-theme="dark"] .nav-link:hover {
+  border-color: oklch(50.1% 0.041 164);
+}
+
+.badge {
+  border-width: 1px;
+}

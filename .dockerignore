@@ -1,0 +1,10 @@
+_build/
+deps/
+.git/
+.env*
+*.ez
+cover/
+doc/
+tmp/
+.elixir_ls/
+node_modules/
