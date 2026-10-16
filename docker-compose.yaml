@@ -1,0 +1,38 @@
+services:
+  db:
+    image: postgres:17
+    container_name: elixirmachine-db
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: elixirmachine_prod
+    ports:
+      - "5433:5432"
+    volumes:
+      - db:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  app:
+    build: .
+    container_name: elixirmachine-app
+    restart: unless-stopped
+    ports:
+      - "4000:4000"
+    environment:
+      DATABASE_URL: ecto://postgres:postgres@db:5432/elixirmachine_prod
+      PHX_HOST: localhost
+      SECRET_KEY_BASE: 4f8c2a9e1b7d6c3a5e8f1b2c4d6e8f0a1b3c5d7e9f1a3b5c7d9e1f3a5b7c9d1e
+      MIX_ENV: prod
+      PHX_SERVER: "true"
+      PORT: "4000"
+    depends_on:
+      db:
+        condition: service_healthy
+
+volumes:
+  db:

@@ -1,0 +1,7 @@
+{
+  "name": "elixirmachine-assets",
+  "private": true,
+  "dependencies": {
+    "daisyui": "^4.12.24"
+  }
+}
